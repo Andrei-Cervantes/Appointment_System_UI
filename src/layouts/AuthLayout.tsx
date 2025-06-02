@@ -2,10 +2,9 @@ import { Outlet } from "react-router-dom";
 
 const AuthLayout = () => {
   return (
-    <>
-      <h1>Auth Layout</h1>
+    <div className="flex h-screen w-screen items-center justify-center">
       <Outlet />
-    </>
+    </div>
   );
 };
 

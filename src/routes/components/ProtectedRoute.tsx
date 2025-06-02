@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import useUserStore from "../zustand/UserStore";
+import useUserStore from "../../zustand/UserStore";
 
 // Types
 type AccessRole = "client" | "provider" | "admin";
@@ -14,7 +14,7 @@ interface ProtectedRouteProps {
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   children,
   allowedRoles,
-  redirectPath = "/login",
+  redirectPath = "/auth/login",
 }) => {
   const location = useLocation();
   const user = useUserStore((state) => state.user);
