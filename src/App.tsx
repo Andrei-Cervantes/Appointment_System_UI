@@ -1,11 +1,16 @@
 import { ThemeProvider } from "./components/theme/theme-provider";
-import Home from "./pages/Home";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AppRoutes from "./routes/AppRoutes";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <ThemeProvider>
-      <Home />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <AppRoutes />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 
