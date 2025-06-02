@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useUserStore from "@/zustand/UserStore";
 
+// Import icons
+import { Loader } from "lucide-react";
+
 const RootRedirect = () => {
   const navigate = useNavigate();
   const user = useUserStore((state) => state.user);
@@ -17,7 +20,11 @@ const RootRedirect = () => {
   }, [user, navigate]);
 
   // Show loading while redirecting
-  return <div>Loading...</div>;
+  return (
+    <div className="flex h-screen w-screen items-center justify-center">
+      <Loader className="animate-spin" />
+    </div>
+  );
 };
 
 export default RootRedirect;

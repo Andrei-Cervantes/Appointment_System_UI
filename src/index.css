@@ -29,3 +29,17 @@
   --color-text-primary: #000000;
   --color-text-muted: #6b7280;
 }
+
+/* Loading animation */
+.loading-animation {
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
