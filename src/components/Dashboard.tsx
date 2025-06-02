@@ -1,7 +1,7 @@
 import useUserStore from "@/zustand/UserStore";
-import ClientLayout from "@/layouts/ClientLayout";
-import ProviderLayout from "@/layouts/ProviderLayout";
-import AdminLayout from "@/layouts/AdminLayout";
+import ClientDashboard from "@/pages/ClientPages/ClientDashboard";
+import ProviderDashboard from "@/pages/ProviderPages/ProviderDashboard";
+import AdminDashboard from "@/pages/AdminPages/AdminDashboard";
 import { Navigate } from "react-router-dom";
 
 const Dashboard = () => {
@@ -9,11 +9,11 @@ const Dashboard = () => {
 
   switch (user?.role) {
     case "client":
-      return <ClientLayout />;
+      return <ClientDashboard />;
     case "provider":
-      return <ProviderLayout />;
+      return <ProviderDashboard />;
     case "admin":
-      return <AdminLayout />;
+      return <AdminDashboard />;
     default:
       return <Navigate to="/login" />;
   }
