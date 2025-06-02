@@ -24,23 +24,17 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   switch (allowedRoles) {
     case "client":
       if (!isVerified && user?.role !== "client") {
-        return (
-          <Navigate to={redirectPath} state={{ from: location }} replace />
-        );
+        return <Navigate to={redirectPath} replace />;
       }
       break;
     case "provider":
       if (!isVerified) {
-        return (
-          <Navigate to={redirectPath} state={{ from: location }} replace />
-        );
+        return <Navigate to={redirectPath} replace />;
       }
       break;
     case "admin":
       if (!isVerified && user?.role !== "admin") {
-        return (
-          <Navigate to={redirectPath} state={{ from: location }} replace />
-        );
+        return <Navigate to={redirectPath} replace />;
       }
       break;
     default:
