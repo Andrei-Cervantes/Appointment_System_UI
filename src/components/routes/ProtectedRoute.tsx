@@ -11,9 +11,6 @@ const ProtectedRoute = ({ children, accessMode }: ProtectedRouteProps) => {
   const location = useLocation();
 
   const isAuthenticated = user?.isVerified;
-  console.log(isAuthenticated);
-  console.log(accessMode);
-  console.log(user?.role);
 
   // For authenticated routes
   if (accessMode === "auth" && !isAuthenticated) {
