@@ -1,33 +1,40 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap");
 
 @theme {
   /* Light theme (default) */
-  --color-background: #ffffff;
-  --color-accent: #5c6bc0;
-  --color-button-primary: #18ffff;
-  --color-button-secondary: #b388ff;
-  --color-text-primary: #000000;
-  --color-text-muted: #6b7280;
+  --color-background: #e3d095;
+  --color-accent: #483aa0;
+  --color-primary: #7965c1;
+  --color-secondary: #483aa0;
+  --color-text-primary: #0e2148;
 }
 
 /* Dark theme */
 .dark {
-  --color-background: #0b0f2b;
-  --color-accent: #5c6bc0;
-  --color-button-primary: #18ffff;
-  --color-button-secondary: #b388ff;
-  --color-text-primary: #ffffff;
-  --color-text-muted: #aab2c8;
+  --color-background: #0e2148;
+  --color-accent: #e3d095;
+  --color-primary: #0e2148;
+  --color-secondary: #0e2148;
+  --color-text-primary: #e3d095;
 }
 
 /* Light theme explicit */
 .light {
-  --color-background: #ffffff;
-  --color-accent: #5c6bc0;
-  --color-button-primary: #18ffff;
-  --color-button-secondary: #b388ff;
-  --color-text-primary: #000000;
-  --color-text-muted: #6b7280;
+  --color-background: #e3d095;
+  --color-accent: #483aa0;
+  --color-primary: #7965c1;
+  --color-secondary: #483aa0;
+  --color-text-primary: #0e2148;
+}
+
+/* Fonts */
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.font-orbitron {
+  font-family: "Orbitron", sans-serif;
 }
 
 /* Loading animation */
