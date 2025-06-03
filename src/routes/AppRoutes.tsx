@@ -14,16 +14,19 @@ import ResetPassword from "@/pages/AuthPages/ResetPassword";
 import VerifyEmail from "@/pages/AuthPages/VerifyEmail";
 
 // Import Client Pages
+import ClientDashboard from "@/pages/ClientPages/ClientDashboard";
 import BookAppointment from "@/pages/ClientPages/BookAppointment";
 import AppointmentHistory from "@/pages/ClientPages/AppointmentHistory";
 import ServiceList from "@/pages/ClientPages/ServiceList";
 
 // Import Provider Pages
+import ProviderDashboard from "@/pages/ProviderPages/ProviderDashboard";
 import ManageAvailability from "@/pages/ProviderPages/ManageAvailability";
 import ManageServices from "@/pages/ProviderPages/ManageServices";
 import AppointmentDetails from "@/pages/ProviderPages/AppointmentDetails";
 
 // Import Admin Pages
+import AdminDashboard from "@/pages/AdminPages/AdminDashboard";
 import ManageUsers from "@/pages/AdminPages/ManageUsers";
 import AllAppointments from "@/pages/AdminPages/AllAppointments";
 import NotFound from "@/pages/NotFound";
@@ -31,7 +34,6 @@ import NotFound from "@/pages/NotFound";
 // Import Route Components
 import RootRedirect from "@/components/routes/RootRedirect";
 import ProtectedRoute from "@/components/routes/ProtectedRoute";
-import DashboardRedirect from "@/components/routes/DashboardRedirect";
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -57,16 +59,16 @@ const AppRoutes = () => {
         <Route path="verify-email" element={<VerifyEmail />} />
       </Route>
 
-      {/* Client Routes (no prefix) */}
+      {/* Client Routes */}
       <Route
-        path="/"
+        path="/client"
         element={
           <ProtectedRoute accessMode="auth">
             <ClientLayout />
           </ProtectedRoute>
         }
       >
-        <Route path="dashboard" element={<DashboardRedirect />} />
+        <Route path="dashboard" element={<ClientDashboard />} />
         <Route path="book-appointment" element={<BookAppointment />} />
         <Route path="appointment-history" element={<AppointmentHistory />} />
         <Route path="service-list" element={<ServiceList />} />
@@ -74,14 +76,14 @@ const AppRoutes = () => {
 
       {/* Provider Routes */}
       <Route
-        path="/"
+        path="/provider"
         element={
           <ProtectedRoute accessMode="auth">
             <ProviderLayout />
           </ProtectedRoute>
         }
       >
-        <Route path="dashboard" element={<DashboardRedirect />} />
+        <Route path="dashboard" element={<ProviderDashboard />} />
         <Route path="manage-availability" element={<ManageAvailability />} />
         <Route path="manage-services" element={<ManageServices />} />
         <Route path="appointment-details" element={<AppointmentDetails />} />
@@ -89,14 +91,14 @@ const AppRoutes = () => {
 
       {/* Admin Routes */}
       <Route
-        path="/"
+        path="/admin"
         element={
           <ProtectedRoute accessMode="auth">
             <AdminLayout />
           </ProtectedRoute>
         }
       >
-        <Route path="dashboard" element={<DashboardRedirect />} />
+        <Route path="dashboard" element={<AdminDashboard />} />
         <Route path="manage-users" element={<ManageUsers />} />
         <Route path="all-appointments" element={<AllAppointments />} />
       </Route>
