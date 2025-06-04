@@ -25,13 +25,13 @@ const AuthLayout = () => {
         <ThemeToggle className="float-right" />
       </header>
       <main className="flex-1 grid grid-cols-[1fr_1fr]">
-        <div className="p-4">
+        <div className="p-3">
           <div
             className="h-full rounded-lg"
             style={{ backgroundColor: getBackgroundColor() }}
           ></div>
         </div>
-        <div className="p-4">
+        <div className="p-3">
           <Outlet />
         </div>
       </main>

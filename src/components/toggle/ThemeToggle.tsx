@@ -1,19 +1,32 @@
+import { useState } from "react";
 import { useTheme } from "@/hooks/useTheme";
-import { Switch } from "@/components/ui/switch";
+import { SunIcon, MoonIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+
 interface ThemeToggleProps {
   className?: string;
 }
 
 const ThemeToggle = ({ className }: ThemeToggleProps) => {
   const { theme, setTheme } = useTheme();
+  const [isChecked, setIsChecked] = useState(theme === "dark");
+
+  const handleThemeToggle = () => {
+    setIsChecked(!isChecked);
+    setTheme(isChecked ? "dark" : "light");
+  };
 
   return (
-    <Switch
-      className={cn(className)}
-      checked={theme === "dark"}
-      onCheckedChange={() => setTheme(theme === "dark" ? "light" : "dark")}
-    />
+    <button
+      onClick={handleThemeToggle}
+      className={cn(className, "rounded-full")}
+    >
+      {isChecked ? (
+        <SunIcon className="size-5 text-yellow-800 hover:text-yellow-600 hover:scale-110 transition-all duration-300" />
+      ) : (
+        <MoonIcon className="size-5 text-blue-500 hover:text-blue-700 hover:scale-110 transition-all duration-300" />
+      )}
+    </button>
   );
 };
 
