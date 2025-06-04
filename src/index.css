@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 @theme {
   /* Light theme (default) */
@@ -8,6 +8,10 @@
   --color-primary: #7965c1;
   --color-secondary: #483aa0;
   --color-text-primary: #0e2148;
+
+  /* Custom fonts */
+  --font-inter: "Inter", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
 }
 
 /* Dark theme */
@@ -28,15 +32,6 @@
   --color-text-primary: #0e2148;
 }
 
-/* Fonts */
-.font-inter {
-  font-family: "Inter", sans-serif;
-}
-
-.font-orbitron {
-  font-family: "Orbitron", sans-serif;
-}
-
 /* Loading animation */
 .loading-animation {
   animation: loading 1s linear infinite;
@@ -49,4 +44,26 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.wave-smooth-left {
+  clip-path: polygon(
+    20% 0%,
+    100% 0%,
+    100% 100%,
+    22% 100%,
+    12% 96%,
+    18% 88%,
+    12% 80%,
+    18% 72%,
+    12% 64%,
+    18% 56%,
+    12% 48%,
+    18% 40%,
+    12% 32%,
+    18% 24%,
+    12% 16%,
+    18% 8%,
+    12% 4%
+  );
 }
