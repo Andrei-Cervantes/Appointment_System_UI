@@ -1,20 +1,23 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Form, FormControl, FormItem, FormLabel } from "@/components/ui/form";
+import AuthCard from "@/components/auth/AuthCard";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const form = useForm();
+
   return (
     <div className="h-full flex items-center justify-center">
-      <Card>
-        <CardHeader>
-          <CardTitle>Login</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Input type="email" placeholder="Email" />
-          <Input type="password" placeholder="Password" />
-          <Button>Login</Button>
-        </CardContent>
-      </Card>
+      <AuthCard>
+        <Form {...form}>
+          <FormItem>
+            <FormLabel>Email</FormLabel>
+            <FormControl>
+              <Input type="email" placeholder="Email" />
+            </FormControl>
+          </FormItem>
+        </Form>
+      </AuthCard>
     </div>
   );
 };
